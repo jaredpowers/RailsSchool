@@ -6,9 +6,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<header class>
+  <ul class="nav nav-tabs">
+    <li role="presentation"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Courses</a></li>
+    <li role="presentation"><a href="#">Teachers</a></li>
+  </ul>
+</header>
+<body class="text-center">
 
 <%= yield %>
-
 </body>
+
+<nav>
+  <ul class="pages">
+    <li><%= link_to('Home', root_path) %></li>
+  </ul>
+</nav>
+
+<footer class=>
+created by @mmdotz
+</footer>
 </html>

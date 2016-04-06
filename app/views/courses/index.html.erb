@@ -1,0 +1,17 @@
+<h1>Courses</h1>
+
+<ul class="list-group">
+  <% courses.each do |course| %>
+  <li class="list-group-item"><%= course.id %>.) <%= link_to(course.name, courses_path(courses)) %></li>
+ <% end %>
+
+<nav>
+  <ul class="pages">
+    <li><%= link_to('Schools index', schools_path) %></li>
+    <li><%= link_to('Teachers index', teachers_path) %></li>
+  </ul>
+</nav>
+
+
+  <%= link_to("< Previous page" , courses_path(page: page - 1)) unless page < 0 %>
+  <%= link_to("More on next page >", courses_path(page: page + 1)) %>

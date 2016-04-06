@@ -10,5 +10,5 @@ class SchoolsController < ApplicationController
     school = School.find(params[:id])
     render locals: { school: school }
   end
-  
+
 end
