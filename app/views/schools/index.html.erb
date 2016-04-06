@@ -1,0 +1,14 @@
+<h1>Schools</h1>
+
+<ul class="list-group">
+  <% schools.each do |school| %>
+      <li class="list-group-item"><%= link_to( school.name, school_path(school)) %> </li>
+    <% end %>
+  </ul>
+
+  <nav>
+    <ul class="pager">
+      <li><%= link_to('Teachers index', teachers_path) %></li>
+      <li><%= link_to('Courses index', courses_path) %></li>
+    </ul>
+  </nav>
