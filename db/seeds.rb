@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+50.times do
+  school = School.create({ name: Faker::University.name })
+
+  [1, 2, 3].sample.times do
+    teacher = Teacher.create({
+      name: Faker::Name.name,
+      school_id: school.id
+      })
+      [6, 7, 8, 9].sample.times do
+        Student.create({
+          name: Faker::name.name,
+          teacher_id: teacher.id
+          })
+      end
+      [1, 2, 3].sample.times do
+        Course.create({
+          name: Faker::Company.buzzword,
+          teacher_id: teacher.id
+          })
+    end
+  end
+end
